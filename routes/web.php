@@ -20,3 +20,32 @@ Route::get('/hello', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+
+Route::get('/page1', function () {
+
+    $array = [
+        "NAME" => "" ,
+        "ID"   => "" ,
+        "GEN"  => "" ,
+        "LIKE" => ""
+    ]; 
+
+    return view('page.page1',$array);
+});
+Route::get('/page2', function () {
+    return view('page.page2');
+});
+Route::get('/page3', function () {
+    return view('page.page3');
+});
+Route::get('/page4', function () {
+    return view('page.page4');
+});
+
+Route::get('/page10/{ID}', function ($id) {
+    $array = [
+        "ID" => $id
+    ];
+    return view('page.page10',$array);
+});
+Route::post('/page','PageController@show');
