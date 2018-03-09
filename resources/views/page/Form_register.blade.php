@@ -1,88 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Register</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="css/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+@extends('layouts.main')
+@section('content')
 
 
-</head>
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Register</a>
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Login</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Register</h1>
-
-                    <!-- @yield('content') -->
-
-
-<!-- 
-                        <form>
+<form method="post">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
@@ -108,7 +28,7 @@
 
 
 
-                          <form method="post" class="form-inline">
+                          <form class="form-inline">
                             
                             <b>Name-Surname</b>
                             <br>
@@ -121,26 +41,17 @@
                                 <label for="name">Name</label>
                                 <input type="text"  class="form-control" id="name" placeholder="Prayut">-
                                 <label for="surname">Surname</label>
-                                <input type="text"  class="form-control" id="surname" placeholder="Chuntocha"> 
+                                <input type="text"  class="form-control" id="surname" placeholder="Chunocha"> 
                             </div>
                             <!-- <input type="text" name="name">-<input type="text" name="surname"> -->
                             <br>
                            
                             <b>Gender</b> 
                             <br>
-                            <div class="radio">
-                                <label>
-                                  <input type="radio" name="sex" id="male" value="M" aria-label="male"><b>male</b>
-                                  <input type="radio" name="sex" id="female" value="F" aria-label="female"><b>female</b>
-                                  <input type="radio" name="sex" id="etc" value="E" aria-label="etc">
-                                </label>
-                              </div>
-                              <label for="etc">etc...</label>
-                                <input type="text"  class="form-control" id="etc" placeholder="...">
-                            <!-- <input type="radio" name="radio" value="m"> male <br>
+                            <input type="radio" name="radio" value="m"> male <br>
                             <input type="radio" name="radio" value="f"> female <br>
                             <input type="radio" name="radio" value="etc"> etc...
-                            <input type="text" name="gender-etc"> -->
+                            <input type="text" name="gender-etc">
                             <br>
                             
                             <b>Tell.</b> 
@@ -150,11 +61,9 @@
                             <!-- <input type="text" placeholder=0811111111 size="10" maxlength=10 name="tel"> -->
                             <br>
                             
-                            
                             <b>Address</b> 
                             <br>
-                            <textarea class="form-control" rows="3"></textarea>
-                            <!-- <textarea name="texarea"></textarea> -->
+                            <textarea name="texarea"></textarea>
                             <br>
                             
                             <b>E-mail</b> 
@@ -277,65 +186,29 @@
                                 <option value="อ่างทอง">อ่างทอง </option>
                                 </select> <br>
                           
-                          <br>
+                          USER <br>
                           <label for="user">user</label>
-                          <br>
                             <input type="text" size="15" maxlength=153 class="form-control" id="user" placeholder="user">
                           <!-- <input type="text" name=" user"> -->
                           <br>
 
-                          
-                          <label for="password">password</label>
-                          <br>
+                          Password <br>
+                          <label for="หน้าอก">password</label>
                             <input type="password" size="15" maxlength=3 class="form-control" id="password" placeholder="password">
                           <!-- <input type="password" name="password"> -->
                           <br>
-                          <label for="repassword">repassword</label>
-                          <br>
-                            <input type="password" size="15" maxlength=3 class="form-control" id="repassword" placeholder="repassword">
-                          <!-- Repassword <br>
-                          <input type="password" name="repassword"> -->
+                          Repassword <br>
+                          <input type="password" name="repassword">
                           <br>
                           <br>
-                        </div>
-                        <button type="submit" class="btn btn-default">Send</button>
-                        <!-- <input type="submit" value="send"> -->
-                        <br>
-                        <button type="reset" class="btn btn-default">Reset</button>  
-                        <!-- <input type="reset" value="reset">                     -->
+                          <input type="submit" value="send">
+                          <br>
+                          <input type="reset" value="reset">                    
                             
                          
-                        </form
-                        
+                        </form>
 
 
 
 
-
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="css/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="css/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
-
-</body>
-
-</html>
+@endsection

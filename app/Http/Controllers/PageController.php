@@ -24,5 +24,11 @@ class PageController extends Controller
             "LIKE" => $checkbox1.$checkbox2
         ]; 
         return view('page.page1',$array);
+
+        
     }
-}
+    #show_select
+    public function show_select(Request $res){
+        return view('page.page12',$res);
+    }// end function show_select
+}//end class

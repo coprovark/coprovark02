@@ -49,3 +49,13 @@ Route::get('/page10/{ID}', function ($id) {
     return view('page.page10',$array);
 });
 Route::post('/page','PageController@show');
+
+Route::get('/Form_register',function() {
+    return view('page.Form_register');
+});
+Route::get('/Form_login',function() {
+    return view('page.Form_login');
+});
+
+# select post
+Route::post('/page12','Pagecontroller@show_select');
