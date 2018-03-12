@@ -14,48 +14,130 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+
+
 Route::get('/hello', function () {
     return view('hello');
 });
-Route::get('/profile', function () {
-    return view('profile');
-});
+
+#localhost:8000/page1
 
 Route::get('/page1', function () {
-
-    $array = [
-        "NAME" => "" ,
-        "ID"   => "" ,
-        "GEN"  => "" ,
-        "LIKE" => ""
-    ]; 
-
-    return view('page.page1',$array);
+	$array = [
+		"NAME" => "" ,
+		"ID"   => "" ,
+		"GEN"  => ""
+	];
+	return view('page.page1' , $array);
 });
 Route::get('/page2', function () {
-    return view('page.page2');
+	return view('page.page2');
 });
 Route::get('/page3', function () {
-    return view('page.page3');
-});
-Route::get('/page4', function () {
-    return view('page.page4');
+	return view('page.page3');
 });
 
-Route::get('/page10/{ID}', function ($id) {
-    $array = [
-        "ID" => $id
-    ];
-    return view('page.page10',$array);
+Route::get('/page10/{id}', function ($id) {
+	$array = [
+		"ID" => $id
+	];
+	return view('page.page10',$array);
 });
+
+Route::get('/form_register', function () {
+	return view('page.form_register');
+});
+
+Route::get('/form_login', function () {
+	$data = [
+		'users'=>[]
+	];
+	return view('page.form_login',$data);
+});
+
+
+Route::get('/form_check_login', function () {
+	$data = [
+		'users'=>[]
+	];
+	return view('page.form_check_login',$data);
+});
+Route::post('/form_check_login','PageController@form_check_login');
+
+
+
+
+
+
+#localhost:8000/page1 TO localhost:8000/page
 Route::post('/page','PageController@show');
-
-Route::get('/Form_register',function() {
-    return view('page.Form_register');
-});
-Route::get('/Form_login',function() {
-    return view('page.Form_login');
-});
+Route::post('/page11','PageController@show_password');
 
 # select post
-Route::post('/page12','Pagecontroller@show_select');
+Route::post('/page12','PageController@show_select');
+
+
+
+# form_login
+Route::post('/form_login','PageController@form_login');
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/form_login2', function () {
+	$array = [
+		'username'=>'',
+		'name'    =>''
+	];
+	return view('page.form_login',$array);
+});
+
+
+Route::post('/form_login2','PageController@form_login2');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/list_users', function () {
+// 	return view('page.list_user');
+// });
+Route::get('/list_users','UsersController@list_users');
+
+
+
+
+
+
+
+
+
+
+
+
+
+

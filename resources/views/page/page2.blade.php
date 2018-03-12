@@ -5,6 +5,15 @@
 @section('content')
 
 
-<a href="/page10/1101">Page10</a>
-    
+
+<a href="/page10/321654987">ส่งค่า 321654987</a>
+
+
+
+
+
+
+
+
+
 @endsection

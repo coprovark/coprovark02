@@ -1,6 +1,6 @@
 
 
-ค่าที่ได้ คือ = {{ $select}}
+ค่าที่ได้ คือ = {{ $select }}
 <br>
 รายละเอียด
-<?php echo e($textarea); ?>
+{{ $txt_textarea }}

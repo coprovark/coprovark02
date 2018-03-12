@@ -4,37 +4,32 @@
 
 @section('content')
 
+page1
+
+
+<form action="/page" method="post" >
+
+    <input type="text" name="name" >
+
+    <input type="hidden" name="hidden" value="1001">
+
+    <input type="radio" name="radio" value="M"> ชาย 
+    <input type="radio" name="radio" value="F"> หญิง 
+
+    <br>
+    <input type="submit" value="ส่งค่า">
     
-
-<form action="/page" method="post">
-    Name
-    <br>
-
-    <input type="text" name="name">
-    <br>
-    Like
-    <br>
-
-    <input type="checkbox" name="checkbox1" value="Cofee"> Cofee
-    <input type="checkbox" name="checkbox2" value="Tea"> Tea
-    <br>
-
-    Gender
-    <br>
-
-    <input type="radio" name="radio" value="male"> male
-    <input type="radio" name="radio" value="female"> female
-
-    <input type="hidden" name="hidden" value="1101">
-    
-    <br><br>
-    <input type="submit" value="send">
-</form
+</form>
 
 <h2>แสดงค่า</h2>
-ชื่อ = {{ $NAME }} <br>
-รหัส = {{ $ID }} <br>
-เพศ = {{ $GEN }} <br>
-ชอบ = {{ $LIKE }} <br>
+ชื่อ = {{ $NAME }}<br>
+รหัส = {{ $ID }}<br>
+เพศ = {{ $GEN }}
+
+
+
+
+
+
 
 @endsection
