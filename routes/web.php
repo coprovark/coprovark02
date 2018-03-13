@@ -84,6 +84,13 @@ Route::post('/page12','PageController@show_select');
 # form_login
 Route::post('/form_login','PageController@form_login');
 
+# delete user
+Route::get('/delete_user/{id}','UsersController@delete_users');
+
+
+#form_register_save
+Route::post('/form_register_save','UsersController@form_register_save');
+
 
 
 
@@ -127,6 +134,8 @@ Route::post('/form_login2','PageController@form_login2');
 // 	return view('page.list_user');
 // });
 Route::get('/list_users','UsersController@list_users');
+
+Route::post('/list_users_find','UsersController@list_users_find');
 
 
 

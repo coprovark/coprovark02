@@ -4,18 +4,18 @@
 
 @section('content')
 
-<form>
+<form action="/list_users_find" method="post">
 <div class="form-group col-sm-1">
       <button class="btn btn-primary">
         <span class="glyphicon glyphicon-plus"></span>  
         เพิ่ม</button>
   </div>
   <div class="form-group col-sm-4">
-    <input type="text" class="form-control"  placeholder="ค้นหา">
+    <input type="text" name="find" class="form-control" value="{{ $find }} "  placeholder="ค้นหา">
   </div>
   <div class="form-group col-sm-1">
       <button class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span>  
+        <span  class="glyphicon glyphicon-search"></span>  
         ค้นหา</button>
   </div>
 </form>
@@ -30,11 +30,11 @@
         @foreach($data_list as $item)
         <tr>
             <td>{{ $item->id }}</td>
-            <td>{{ $item->username }}</td>
+            <td>{{ $item->user }}</td>
             <td>{{ $item->password }}</td>
             <td>{{ $item->status }}</td>
             <td>
-                <button class="btn btn-danger btn-xs">
+                <button class="btn btn-danger btn-xs" onclick="return_confirm('{{ $item->id }}')">
                     <span class="glyphicon glyphicon-remove"></span>  
                     ลบรายการ
                 </button>
@@ -47,6 +47,15 @@
         @endforeach
     </table>
 
+
+<script>
+    function _confirm(id){
+        if(confirm('ยืนยันการลบข้อมูล')){
+            window.location.href = '/delete_user/'+id;
+                                    '/delete/'15;
+        }
+    }
+</script>
 
 
 
